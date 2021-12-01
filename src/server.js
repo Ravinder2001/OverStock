@@ -1,8 +1,8 @@
 /** @format */
 
 const express = require('express');
-const connect = require('./configs/db');
-const path = require('path');
+const connect = require("./Configs/db");
+const path = require("path");
 const port = process.env.PORT || 4000;
 const app = express();
 
@@ -15,7 +15,7 @@ app.set("view engine", "ejs");
 app.use("/static", express.static(path.join(__dirname, "Style")));
 app.use("/static", express.static(path.join(__dirname, "Script")));
 
-const homeController = require("./controllers/home.controller");
+const homeController = require("./Controllers/home.controller");
 app.use("/", homeController);
 
 app.listen(port, async () => {
